@@ -37,12 +37,12 @@ export const Footer = () => (
         <h3 className="text-lg text-green-800 font-semibold mb-4">Shop</h3>
         <ul className="space-y-2 text-gray-700">
           <li>
-            <Link to="/collections/all?category=Indoor" className="hover:text-green-600 transition-colors">
+            <Link to="/collections/all?type=Indoor" className="hover:text-green-600 transition-colors">
               Indoor Plants
             </Link>
           </li>
           <li>
-            <Link to="/collections/all?category=Outdoor" className="hover:text-green-600 transition-colors">
+            <Link to="/collections/all?type=Outdoor" className="hover:text-green-600 transition-colors">
               Outdoor Plants
             </Link>
           </li>
@@ -54,23 +54,23 @@ export const Footer = () => (
         <h3 className="text-lg text-green-800 font-semibold mb-4">Support</h3>
         <ul className="space-y-2 text-gray-700">
           <li>
-            <Link to="#" className="hover:text-green-600 transition-colors">
-              Contact Us
+            <Link to="/" className="hover:text-green-600 transition-colors">
+              Home
             </Link>
           </li>
           <li>
-            <Link to="#" className="hover:text-green-600 transition-colors">
-              About Us
+            <Link to="/collections/all" className="hover:text-green-600 transition-colors">
+              Shop
             </Link>
           </li>
           <li>
-            <Link to="#" className="hover:text-green-600 transition-colors">
-              Plant FAQs
+            <Link to="/profile" className="hover:text-green-600 transition-colors">
+              Profile
             </Link>
           </li>
           <li>
-            <Link to="#" className="hover:text-green-600 transition-colors">
-              Care Tips
+            <Link to="/weather-suggestions" className="hover:text-green-600 transition-colors">
+              Weather Plants
             </Link>
           </li>
         </ul>

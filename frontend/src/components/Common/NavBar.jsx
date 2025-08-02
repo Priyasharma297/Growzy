@@ -109,19 +109,19 @@ export const NavBar = () => {
           <h2 className="text-xl font-semibold mb-4 text-green-700">Menu</h2>
           <Link
             to="/collections/all"
-            className="text-gray-700 hover:text-green-700 text-sm font-medium uppercase"
+            className=" block text-gray-700 hover:text-green-700 "
           >
             All
           </Link>
           <Link
-            to="/collections/all?category=Indoor"
+            to="/collections/all?type=Indoor"
             onClick={() => setNavDrawerOpen(false)}
             className="block text-gray-600 hover:text-green-700"
           >
             Indoor Plants
           </Link>
           <Link
-            to="/collections/all?category=Outdoor"
+            to="/collections/all?type=Outdoor"
             onClick={() => setNavDrawerOpen(false)}
             className="block text-gray-600 hover:text-green-700"
           >
