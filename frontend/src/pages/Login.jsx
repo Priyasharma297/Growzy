@@ -20,9 +20,18 @@ const Login = () => {
   useEffect(() => {
     if (user) {
       if (cart?.products.length > 0 && guestId) {
-        dispatch(mergeCart(guestId)).then(() => {
-          navigate(isCheckoutRedirect ? "/checkout" : "/");
-        });
+       (async () => {
+  try {
+    const userToken = localStorage.getItem("userToken");
+    const mergedCart = await mergeGuestCart(guestId, userToken);
+    dispatch(mergeCart(mergedCart)); // <-- this updates Redux
+    navigate(isCheckoutRedirect ? "/checkout" : "/");
+  } catch (err) {
+    console.error("Error merging cart:", err);
+    navigate(isCheckoutRedirect ? "/checkout" : "/");
+  }
+})();
+
       } else {
         navigate(isCheckoutRedirect ? "/checkout" : "/");
       }

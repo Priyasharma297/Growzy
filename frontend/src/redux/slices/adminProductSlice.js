@@ -20,12 +20,13 @@ export const fetchAdminProducts = createAsyncThunk(
 export const createProduct = createAsyncThunk(
   "adminProducts/createProduct",
   async (productData) => {
+    const token = localStorage.getItem("userToken");
     const response = await axios.post(
       `${API_URL}/api/admin/products`,
       productData,
       {
         headers: {
-          Authorization: USER_TOKEN,
+          Authorization: `Bearer ${token}`,
         },
       }
     );

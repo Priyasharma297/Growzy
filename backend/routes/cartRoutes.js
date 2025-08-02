@@ -48,13 +48,13 @@ router.post("/", async (req, res) => {
         potSize,
         sunlight,
         quantity,
-        category: product.category, 
-  type: product.type,     
+        category: product.category,
+        type: product.type,
       });
     }
     cart.totalPrice = cart.products.reduce((sum, item) => {
-  return sum + Number(item.price) * item.quantity;
-}, 0);
+      return sum + Number(item.price) * item.quantity;
+    }, 0);
 
     await cart.save();
     res.status(200).json(cart);
@@ -80,8 +80,8 @@ router.put("/", async (req, res) => {
 
     cart.products[productIndex].quantity = quantity;
     cart.totalPrice = cart.products.reduce((sum, item) => {
-  return sum + Number(item.price) * item.quantity;
-}, 0);
+      return sum + Number(item.price) * item.quantity;
+    }, 0);
 
     await cart.save();
     res.status(200).json(cart);
@@ -100,15 +100,31 @@ router.delete("/", async (req, res) => {
     cart.products = cart.products.filter(
       (p) => p.productId.toString() !== productId
     );
-cart.totalPrice = cart.products.reduce((sum, item) => {
-  return sum + Number(item.price) * item.quantity;
-}, 0);
+    cart.totalPrice = cart.products.reduce((sum, item) => {
+      return sum + Number(item.price) * item.quantity;
+    }, 0);
 
     await cart.save();
     res.status(200).json(cart);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+});
+
+//@router GET /api/cart
+router.get("/",async(req,res)=>{
+    const {userId, guestId}=req.query;
+    try {
+        const cart=await getCart(userId,guestId);
+        if(cart){
+            res.json(cart);
+        }else{
+            res.status(404).json({ message: "Cart not found" });
+        }
+    } catch (error) {
+        console.error(error);
+ res.status(500).json({ message: "Server Error" });
+    }
 });
 
 // Merge guest cart into user cart
@@ -145,5 +161,6 @@ router.post("/merge", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
 
 module.exports = router;

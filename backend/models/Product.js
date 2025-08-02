@@ -51,7 +51,7 @@ const productSchema = new mongoose.Schema(
     },
     images: [
       {
-        url: { type: String, required: true },
+        url: { type: String, required: false},
         altText: String,
       },
     ],
@@ -77,7 +77,7 @@ const productSchema = new mongoose.Schema(
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
+      required: false,
     },
 
     metaTitle: String,

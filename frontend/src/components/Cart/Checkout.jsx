@@ -4,6 +4,7 @@ import PayPalButton from "./PayPalButton";
 import { useDispatch, useSelector } from "react-redux";
 import { createCheckout } from "../../redux/slices/checkoutSlice";
 import axios from "axios";
+import {clearCart} from "../../redux/slices/cartSlice"
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -72,6 +73,7 @@ const Checkout = () => {
           },
         }
       );
+      
       navigate("/order-confirmation");
     } catch (error) {
       console.error(error);

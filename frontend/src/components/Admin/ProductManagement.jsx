@@ -23,7 +23,16 @@ const ProductManagement = () => {
 
   return (
     <div className="max-w-7xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-6 text-green-800">Plant Product Management</h2>
+      <div className="flex justify-between items-center mb-6">
+    <h2 className="text-3xl font-bold text-green-800">Plant Product Management</h2>
+    <Link
+      to="/admin/products/add"
+      className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+    >
+      + Add Plant
+    </Link>
+  </div>
+      
       <div className="overflow-x-auto shadow-lg sm:rounded-lg border border-green-200">
         <table className="min-w-full text-left text-gray-700">
           <thead className="bg-green-100 text-xs uppercase text-green-800">
