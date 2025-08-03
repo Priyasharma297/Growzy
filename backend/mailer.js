@@ -30,6 +30,7 @@ const sendSubscriptionEmail = async (toEmail) => {
 
     <hr style="margin-top: 30px; border: none; border-top: 1px solid #ddd;">
     <p style="font-size: 12px; color: #888;">You’re receiving this email because you subscribed to Grozy updates. We’re happy you’re here 💌</p>
+    <p>Priya Sharma</p>
   </div>
 `,
   };
