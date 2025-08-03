@@ -3,34 +3,14 @@ import { RiTwitterXLine } from "react-icons/ri";
 import { TbBrandMeta } from "react-icons/tb";
 import { FiPhoneCall } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import Newsletter from "./Newsletter";
 
 export const Footer = () => (
+  
   <footer className="border-t py-12 bg-white">
     <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4 lg:px-0">
       {/* Newsletter */}
-      <div>
-        <h3 className="text-lg text-green-800 font-semibold mb-4">Newsletter</h3>
-        <p className="text-gray-600 mb-4">
-          Be the first to hear about new indoor & outdoor plant arrivals.
-        </p>
-        <p className="font-medium text-sm text-gray-700 mb-6">
-          Sign up and get 10% off your first order.
-        </p>
-        <form className="flex">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="p-3 w-full text-sm border-t border-l border-b border-green-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-green-600 transition-all"
-            required
-          />
-          <button
-            type="submit"
-            className="bg-green-600 text-white px-6 py-3 text-sm rounded-r-md hover:bg-green-700 transition-all"
-          >
-            Subscribe
-          </button>
-        </form>
-      </div>
+      <Newsletter />
 
       {/* Shop */}
       <div>
